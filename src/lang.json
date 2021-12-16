@@ -1,0 +1,22 @@
+{
+  "ar": {
+    "translation": {
+      "Todo": "المهام",
+      "Add a new task here...": "اضافة مهمة جديدة هنا...",
+      "Add": "اضافة",
+      "Followers": "المتابعين",
+      "Go Back": "رجوع",
+      "language": "EN"
+    }
+  },
+  "en": {
+    "translation": {
+      "Todo": "Todo",
+      "Add a new task here...": "Add a new task here...",
+      "Add": "Add",
+      "Followers": "Followers",
+      "Go Back": "Go Back",
+      "language": "AR"
+    }
+  }
+}

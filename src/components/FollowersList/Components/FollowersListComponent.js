@@ -1,28 +1,33 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-function FollowersListComponent({followers}) {
+function FollowersListComponent({ followers }) {
+  const { t } = useTranslation();
 
-    return (
-
-        <div className="followerslist-container">
-            <div>
-                {followers.map((follower, index) => (
-                    <div className="follower-item" data-testid={`follower-card-${index}`} key={`follower-card-${index}`}>
-                        <img src={follower.picture.large}/>
-                        <div className="followers-details">
-                            <div className="follower-item-name">
-                                <h4>{follower.name.first}</h4> <h4>{follower.name.last}</h4>
-                            </div>
-                            <p>{follower.login.username}</p>
-                        </div>
-                    </div>
-                ))}
+  return (
+    <div className="followerslist-container">
+      <div>
+        {followers.map((follower, index) => (
+          <div
+            className="follower-item"
+            data-testid={`follower-card-${index}`}
+            key={`follower-card-${index}`}
+          >
+            <img src={follower.picture.large} />
+            <div className="followers-details">
+              <div className="follower-item-name">
+                <h4>{follower.name.first}</h4> <h4>{follower.name.last}</h4>
+              </div>
+              <p>{follower.login.username}</p>
             </div>
-            <div className="todo-footer">
-                <Link to="/" >Go Back</Link>
-            </div>
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+      <div className="todo-footer">
+        <Link to="/">{t("Go Back")}</Link>
+      </div>
+    </div>
+  );
 }
 
 export default FollowersListComponent;
