@@ -3,21 +3,16 @@ import Banner from "./components/Banner/Banner";
 import { Switch, Route } from "react-router-dom";
 import TodoPage from "./pages/TodoPage/TodoPage";
 import FollowersPage from "./pages/FollowersPage/FollowersPage";
-import { useTranslation } from "react-i18next";
-import changeLanguage from "./Utils/changeLanguage";
 
+import useLocales from "./Utils/hooks/useLocales";
 function App() {
-  const { t, i18n } = useTranslation();
-
-  const handleChangeLanguage = () => {
-    changeLanguage(i18n.language === "ar" ? "en" : "ar", i18n);
-  };
+    const {   currentLang, translate, onChangeLang } = useLocales();
 
   return (
     <div
       className="App"
       data-testid={"learn react"}
-      dir={i18n.language === "ar" && "rtl"}
+      dir={currentLang.value === "ar" && "rtl"}
     >
       <Banner />
       <button
@@ -31,9 +26,9 @@ function App() {
           margin: "0 30px",
           fontSize: 25,
         }}
-        onClick={handleChangeLanguage}
+        onClick={onChangeLang}
       >
-        {t("language")}
+        {translate('language')}
       </button>
       <Switch>
         <Route strict exact path="/" component={TodoPage} />

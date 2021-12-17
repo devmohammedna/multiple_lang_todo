@@ -1,5 +1,5 @@
-{
-  "ar": {
+{ 
+ "ar": {
     "translation": {
       "Todo": "المهام",
       "Add a new task here...": "اضافة مهمة جديدة هنا...",
@@ -9,7 +9,7 @@
       "language": "EN"
     }
   },
-  "en": {
+ "en": {
     "translation": {
       "Todo": "Todo",
       "Add a new task here...": "Add a new task here...",
@@ -18,5 +18,5 @@
       "Go Back": "Go Back",
       "language": "AR"
     }
-  }
+}
 }

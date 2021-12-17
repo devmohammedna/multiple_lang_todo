@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import useLocales from "../../../Utils/hooks/useLocales";
 
 function FollowersListComponent({ followers }) {
-  const { t } = useTranslation();
+  const {  translate } = useLocales();
 
   return (
     <div className="followerslist-container">
@@ -13,7 +13,7 @@ function FollowersListComponent({ followers }) {
             data-testid={`follower-card-${index}`}
             key={`follower-card-${index}`}
           >
-            <img src={follower.picture.large} />
+            <img src={follower.picture.large} alt="img" />
             <div className="followers-details">
               <div className="follower-item-name">
                 <h4>{follower.name.first}</h4> <h4>{follower.name.last}</h4>
@@ -24,7 +24,7 @@ function FollowersListComponent({ followers }) {
         ))}
       </div>
       <div className="todo-footer">
-        <Link to="/">{t("Go Back")}</Link>
+        <Link to="/">{translate("Go Back")}</Link>
       </div>
     </div>
   );

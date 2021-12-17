@@ -2,14 +2,14 @@ import React from "react";
 import FollowersList from "../FollowersList/FollowersList";
 import Header from "../Header/Header";
 import "./Followers.css";
-import { useTranslation } from "react-i18next";
+import useLocales from "../../Utils/hooks/useLocales";
 
 export default function Followers() {
-  const { t } = useTranslation();
-
+ const {  translate } = useLocales();
+ 
   return (
     <div className="followers">
-      <Header title={t("Followers")} />
+      <Header title={translate("Followers")} />
       <FollowersList />
     </div>
   );
